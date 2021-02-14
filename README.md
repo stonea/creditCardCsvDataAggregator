@@ -3,7 +3,7 @@ Most banking websites let you export the history of your credit card
 transactions into a CSV file.  This script combines data from these files
 (across multiple institutions) into a single, locally stored, database.  
 
---
+# About this project
 
 I have several credit cards and I wanted to aggregate my transaction history
 into a single database I could use to analyze my spending habits.
@@ -13,20 +13,18 @@ and Mint but these services rely on you giving the username and password to
 each bank you want to import data from. I'm uneasy doing this and would rather
 do everything locally so I wrote this script.
 
-Essentially, the intent is you go to your various banks’ websites and download
+Essentially, the intent is you go to your various banksâ€™ websites and download
 your data, as CSV files, into your operating system's default download
 directory.  The script then processes those files, extracts whatever
 transactions haven't already been added to the database, then dumps those.
 
 Every bank formats the data in the CSV file differently so the script tries to
-infer the format. Currently it’s been configured to process CSV files dumped
+infer the format. Currently itâ€™s been configured to process CSV files dumped
 from: Barclays, Capital One, Chase, BOA, as well as a local credit union I use.
 
 It also uses the filename to try and infer what credit card the CSV file refers
 to.  Again, this is driven by a table that would have to be updated for any
-individual’s specific use case.
-
---
+individualâ€™s specific use case.
 
 # Assumptions
 
@@ -46,7 +44,7 @@ care to hack this for your use case be aware about the following assumptions:
 Additionally, the script assumes you already have a database set up to export
 the data.
 
-* You have an Access database named `finances_db.accdb1 in whatever directory you’re invoking the script from.
+* You have an Access database named `finances_db.accdb1 in whatever directory youâ€™re invoking the script from.
 * This database has a table named cc_transactions with the fields: `ID`, `transaction_date`, `amount`, `payee`, and `account` where the field types are like this:
   * `ID` is an `Autonumber`
   * `Transaction_date` is a `Date/Time`
